@@ -1,1 +1,1 @@
-This repository contains data structure problems solved using javascript
+Contains common data structure problems and Algos in javascript
