@@ -21,3 +21,7 @@ function minOperationsToMakeBeautiful(str) {
 
 // Example usage:
 console.log(minOperationsToMakeBeautiful('0010')); // Output: 1
+
+
+//Sample Article
+//https://placewit.medium.com/beautiful-strings-a9a69d2fdf2d
