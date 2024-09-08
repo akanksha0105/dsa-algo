@@ -23,5 +23,10 @@ function minOperationsToMakeBeautiful(str) {
 console.log(minOperationsToMakeBeautiful('0010')); // Output: 1
 
 
+//Time Complexity : O(|STR|)
+// Space Complexity : O(1)
+
+
+
 //Sample Article
 //https://placewit.medium.com/beautiful-strings-a9a69d2fdf2d
