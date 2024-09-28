@@ -1,18 +1,25 @@
-const flattenArray = (array) => {
-    let result = [];
-
-    array.forEach(element => {
-        if(Array.isArray(element)){
-            result = result.concat(flattenArray(element))
-        }else {
-            result.push(element)
-        }
-    });
+function flattenArray(arr, depth = Infinity) {
+    const flattened = [];
     
-    return result;
-}
+    for (const element of arr) {
+      if (Array.isArray(element) && depth > 0) {
+        flattened.push(...flattenArray(element, depth - 1));
+      } else {
+        flattened.push(element);
+      }
+    }
+    
+    return flattened;
+  }
+  
+  
+  // Example usage
+  const nestedArray = [1, [2, [3, 4], 5], [6, [7, [8, 9]]]];
+  
+  console.log(flattenArray(nestedArray, 1)); // [1, 2, [3, 4], 5, 6, [7, [8, 9]]]
+  console.log(flattenArray(nestedArray, 2)); // [1, 2, 3, 4, 5, 6, 7, [8, 9]]
+  console.log(flattenArray(nestedArray));    // [1, 2, 3, 4, 5, 6, 7, 8, 9] (default Infinity)
+  
 
 
-const nestedArray = [1, [2, [3, 4], 5], [6, [7, [8, 9]]]];
-const flatArray = flattenArray(nestedArray);
-console.log(flatArray)
+  //depth: levels of nesting
